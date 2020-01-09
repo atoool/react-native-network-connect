@@ -1,6 +1,7 @@
-import { Component, PropTypes } from 'react';
-import { NetInfo } from 'react-native';
+import { Component } from 'react';
+import NetInfo from "@react-native-community/netinfo";
 import isNetworkConnected from './isNetworkConnected';
+import {PropTypes} from 'prop-types'
 
 class ConnectivityRenderer extends Component {
   static propTypes = {
