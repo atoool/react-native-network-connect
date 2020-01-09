@@ -13,7 +13,7 @@ class ConnectivityRenderer extends Component {
   };
 
   componentDidMount() {
-    NetInfo.addEventListener(state=>
+    this.unsubscribe =NetInfo.addEventListener(state=>
       this.handleConnectivityChange(state.isConnected)
     );
     // If user is not using the networkHOC, no harm in the below call. handleFirstConnectivityChange will fire
@@ -27,9 +27,7 @@ class ConnectivityRenderer extends Component {
   }
 
   componentWillUnmount() {
-    NetInfo.removeEventListener(state=>
-      this.handleConnectivityChange(state.isConnected)
-    );
+    this.unsubscribe()
   }
 
   handleConnectivityChange = (isConnected) => {
