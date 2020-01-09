@@ -4,4 +4,4 @@ import ConnectivityRenderer from './ConnectivityRenderer';
 import createNetworkMiddleware from './createNetworkMiddleware';
 import * as actionTypes from './actionTypes';
 
-export default {reducer,withNetworkConnectivity,ConnectivityRenderer,createNetworkMiddleware,actionTypes}
+export {ConnectivityRenderer,reducer,withNetworkConnectivity,createNetworkMiddleware,actionTypes}
