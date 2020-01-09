@@ -1,6 +1,7 @@
-import { Component, PropTypes } from 'react';
-import { NetInfo } from 'react-native';
+import { Component } from 'react';
+import NetInfo from "@react-native-community/netinfo";
 import isNetworkConnected from './isNetworkConnected';
+import {PropTypes} from 'prop-types'
 
 class ConnectivityRenderer extends Component {
   static propTypes = {
@@ -12,9 +13,8 @@ class ConnectivityRenderer extends Component {
   };
 
   componentDidMount() {
-    NetInfo.isConnected.addEventListener(
-      'change',
-      this.handleConnectivityChange
+    NetInfo.addEventListener(state=>
+      this.handleConnectivityChange(state.isConnected)
     );
     // If user is not using the networkHOC, no harm in the below call. handleFirstConnectivityChange will fire
     // as soon as the component mounts, setting the right connectivity, hence re-rendering child components
