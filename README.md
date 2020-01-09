@@ -22,6 +22,8 @@ This library aims to group together a variety of modules, whose end goal is to m
 
 ```
 $ yarn add react-native-network-connectivity
+$ yarn add prop-types
+$ yarn add @react-native-community/netinfo
 ```
 
 ## API
