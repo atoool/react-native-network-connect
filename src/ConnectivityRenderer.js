@@ -27,9 +27,8 @@ class ConnectivityRenderer extends Component {
   }
 
   componentWillUnmount() {
-    NetInfo.isConnected.removeEventListener(
-      'change',
-      this.handleConnectivityChange
+    NetInfo.removeEventListener(state=>
+      this.handleConnectivityChange(state.isConnected)
     );
   }
 
